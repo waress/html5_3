@@ -1,4 +1,63 @@
-p.sub-lead {
-    text-decoration: underline;
-    font-weight: 700;
+/* facebook gomb */
+.btn-facebook {
+    border: none;
+    background-color: #3A5795;
+    color: #f0f0f0;
+    /* box-shadow: 2px 2px; */
+    box-shadow: 0 0 8px #777;
+    border-radius: 2px;
+    transition: all 0.5s; /*áttünés*/
+}
+
+.btn-facebook:hover {
+    /*box-shadow: 7px 7px;*/
+    box-shadow: 0 0 3px #777;
+}
+
+/* profile div */
+.profile-div {
+    position: fixed;
+    left: -100%; /* dupla olyan szélességben balra van téve: -200% */
+    /* transition: all .5s; /* left tulajdonságra történik az átmenet */
+    top: 100px;
+    opacity: 0;
+}
+
+.profile-div.show {
+    position: relative;
+    animation-name: facebook;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    left: 0;
+    top: 0;
+    opacity: 1;
+}
+
+.profile-div form{
+    width: 50%;
+    margin: 10px auto;
+}
+@media screen and (max-width: 550px) {
+    .profile-div form {
+        width: 100%;
+    }
+}
+
+/* Keyframes */
+@keyframes cd facebook {
+    0%  { /* kiindulási állapot */
+        opacity: 0;
+        left: -100%;
+        top: 100px
+    }
+    50% {
+        opacity: 0.5;
+        left: 0;
+        top: 100px;
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+        top: 0;
+    }
 }
